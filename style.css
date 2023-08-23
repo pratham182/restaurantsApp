@@ -1,0 +1,76 @@
+
+*{
+    margin: 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+height: 60px;
+    /*border: 2px solid;*/
+    box-shadow: 0 15px 40px -12px rgba(40,44,63,.15);
+align-items: center;
+padding: 0 20px;
+    
+}
+
+#logo >svg{
+height: 100%;
+width: 40px;
+
+}
+.nav{
+    margin: 10px;
+}
+.nav-links >ul{
+display: flex;
+list-style: none;
+/* border: 2px solid; */
+
+
+}
+.nav-links>ul>li{
+padding: 10px;
+/* border: 2px solid ;   */
+color: rgb(89,93,107);
+}
+
+/*
+margin  == outside the border (extenal)
+ vs  
+ padding == inside the border (internal )
+
+*/
+
+
+
+.card{
+
+    width: 15.5rem;
+    border: 0.1px solid white;
+    padding: 1.25rem;
+    margin: 1.25rem;
+    border-radius: 10%;
+    
+}
+.card>img{
+    width: 100%;
+    border-radius: 1rem;
+}
+.card >h2{
+
+font-size: 1rem;
+color: rgb(65,68,73);
+}
+.resturList{
+    display: flex;
+    flex-wrap: wrap;
+    
+justify-content: center;
+
+}
+
+
+#rating{
+    display: flex;
+    margin-top: 1%;
+}
