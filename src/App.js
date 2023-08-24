@@ -1,7 +1,15 @@
 import react from "react";
 import reactdom from "react-dom/client";
+//Importing 
 
 
+//importing default importing
+import Footer from "./component/Footer";
+
+
+//importing named import
+import { main_section,main_section2 } from "./component/Many_comp";
+console.log("yes"+main_section);
 const root=reactdom.createRoot(document.getElementById("root"));
 
 
@@ -238,15 +246,16 @@ const Body=()=>(
     
 );
 
-const Footer=()=>(
-    <h4>Footer</h4>
-) 
+
 const WholeComponent=()=>(
     <react.Fragment>
      <Header/>
      
     <Body/>
     <Footer/>
+    <main_section/>
+    <main_section2/>
+    
     </react.Fragment>
     
 )
