@@ -1,5 +1,5 @@
 //named export 
-export const main_section=()=>{
+export const Main_section=()=>{
 return(
     <div>
         I'm main section 1
@@ -8,7 +8,7 @@ return(
 }
 
 
-export const main_section2=()=>{
+export const Main_section2=()=>{
 return(
     <div>
         I'm main section 2
