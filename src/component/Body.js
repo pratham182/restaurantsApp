@@ -1,7 +1,42 @@
 import RestuCard from "./RestuCard";
 import { burgerKing } from "../config";
+import { useState } from "react";
 
-const Body=()=>(
+
+
+//what is state ?  //just have to create local variable in react we need to use state   (it's a built in react object that contain information or data about the component) 
+//what is hooks?   // it's just a js function. give differenent functionality .Many types like useState 
+//what is useState?  (from react as named import)
+
+const Body=()=>{
+const [searchText,setSearchText]=useState();   //to create local state variable //return an array (ist is state variable (use like a normal varaible )  )
+//inside the userState you have give default value 
+//2nd index is function through which we have to change the state i.e value
+
+
+return (
+//have to change variable in react that i use 
+//chabges variable == react kind of varibale 
+//react variable == state variable 
+//every componebt in react maintain a state (you put varible into that state )
+//local variable == create a state 
+//state == useState hook to create variable (like let h="text")
+
+    <>
+   <div id="search_bar">
+    <input type="text" placeholder="Search" value={searchText} onChange={(e)=>{
+      setSearchText(e.target.value);
+    }}>
+    </input>
+    <h1>
+      {searchText}
+    </h1>
+    <button>
+        Submit
+    </button>
+    
+   </div>
+
     <div className="resturList"> 
 
     {
@@ -40,7 +75,8 @@ const Body=()=>(
     })
 }
     </div>
+    </>
     
 );
-
+}
 export default Body;

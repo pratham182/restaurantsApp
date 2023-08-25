@@ -1,3 +1,4 @@
+
 const RestuCard=({
     name,cuisines,img,totalRatingsString
 })=>  {
