@@ -7,6 +7,13 @@ import { useState } from "react";
 //what is state ?  //just have to create local variable in react we need to use state   (it's a built in react object that contain information or data about the component) 
 //what is hooks?   // it's just a js function. give differenent functionality .Many types like useState 
 //what is useState?  (from react as named import)
+const filter=(searchText,burgerKing)=>{
+  console.log("hey");
+const data= burgerKing.filter((restu)=>
+restu.name.includes(searchText))
+
+return data;
+}
 
 const Body=()=>{
 const [searchText,setSearchText]=useState();   //to create local state variable //return an array (ist is state variable (use like a normal varaible )  )
@@ -14,6 +21,8 @@ const [searchText,setSearchText]=useState();   //to create local state variable 
 //2nd index is function through which we have to change the state i.e value
 
 
+// const [searchClick,setSearchClick]=useState("false");
+const [restu,setRestru]=useState(burgerKing);
 return (
 //have to change variable in react that i use 
 //chabges variable == react kind of varibale 
@@ -22,6 +31,7 @@ return (
 //local variable == create a state 
 //state == useState hook to create variable (like let h="text")
 
+//react 
     <>
    <div id="search_bar">
     <input type="text" placeholder="Search" value={searchText} onChange={(e)=>{
@@ -29,9 +39,12 @@ return (
     }}>
     </input>
     <h1>
-      {searchText}
+      {/* {searchClick} */}
     </h1>
-    <button>
+    <button onClick={()=>{
+      const data=filter(searchText,burgerKing);
+      setRestru(data);
+    }}>
         Submit
     </button>
     

@@ -4,7 +4,7 @@ const RestuCard=({
 })=>  {
     
     //const {name,img}=Restu;
-    console.log(name);
+    
     return(
 
 
