@@ -9,11 +9,12 @@ import { useState } from "react";
 //what is useState?  (from react as named import)
 
 const filter=(searchText,burgerKing)=>{
-  console.log("hey");
-const data= burgerKing.filter((restu)=>
+  
+  
+return burgerKing.filter((restu)=>
 restu.name.includes(searchText))
 
-return data;
+
 }
 
 const Body=()=>{
@@ -43,7 +44,12 @@ return (
       {/* {searchClick} */}
     </h1>
     <button onClick={()=>{
+      //filter out the data
+     
       const data=filter(searchText,burgerKing);
+     
+      //update restru
+      console.log(data);
       setRestru(data);
     }}>
         Submit
@@ -84,7 +90,7 @@ return (
 
 {
     //using map function
-    burgerKing.map((res)=>{
+    restu.map((res)=>{
        return <RestuCard  {... res} />;
     })
 }
