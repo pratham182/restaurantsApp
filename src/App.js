@@ -1,4 +1,4 @@
-import react from "react";
+import react, { useState } from "react";
 import reactdom from "react-dom/client";
 //Importing 
 
@@ -8,6 +8,7 @@ import Footer from "./component/Footer";
 import Header from "./component/Header";
 import Body from "./component/Body";
 
+import Child from "./component/Child";
 
 //importing named import
 import { Main_section,Main_section2 } from "./component/Many_comp";
@@ -42,7 +43,11 @@ const root=reactdom.createRoot(document.getElementById("root"));
 
 
 
-const WholeComponent=()=>(
+const WholeComponent=()=>
+{ const [name]=useState("hello"); 
+
+return (
+  
     <react.Fragment>
      <Header/>
      
@@ -50,12 +55,12 @@ const WholeComponent=()=>(
     <Footer/>
     <Main_section/>
     <Main_section2/>
-    
+    <Child name={name} />
     </react.Fragment>
     
-)
+)}
 
-
+  
 root.render(<WholeComponent/>);
 
 
