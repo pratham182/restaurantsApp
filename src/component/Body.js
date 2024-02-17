@@ -1,6 +1,6 @@
 import RestuCard from "./RestuCard";
 import { burgerKing } from "../config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -17,6 +17,8 @@ restu.name.includes(searchText))
 
 }
 
+
+
 const Body=()=>{
 const [searchText,setSearchText]=useState();   //to create local state variable //return an array (ist is state variable (use like a normal varaible )  )
 //inside the userState you have give default value 
@@ -25,6 +27,27 @@ const [searchText,setSearchText]=useState();   //to create local state variable 
 
 // const [searchClick,setSearchClick]=useState("false");
 const [restu,setRestru]=useState(burgerKing);
+
+
+
+//useEffect hook
+
+//it will run after render
+
+useEffect(()=>{
+  getRestu();
+},[])
+
+useEffect(()=>{
+  console.log("Hey2!!");
+},[searchText])
+
+const getRestu=async()=>{
+const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&collection=83644&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+const json_data=await data.json();
+console.log(json_data?.data);
+setRestru(json_data?.data?.cards);
+}
 return (
 //have to change variable in react that i use 
 //chabges variable == react kind of varibale 

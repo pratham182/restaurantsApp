@@ -37,7 +37,7 @@ console.log(ele);
 <img src={img}>
 </img>
 
-<h2 >{name}</h2> 
+<h2 >{card?.card?.info?.name}</h2> 
 
 {/* rating */}
 <div id="rating">
