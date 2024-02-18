@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 
 
-const Child=({name})=>{
-    const [namee,changeName]=useState("");
-    const [valuee,change]=useState(true);
-    return(
+const Child = ({ name }) => {
+    const [namee, changeName] = useState("");
+    const [valuee, change] = useState(true);
+    return (
         <>
-        <input type="text" value={namee} onChange={(e)=>{
-            changeName(e.target.value);
+            <input type="text" value={namee} onChange={(e) => {
+                changeName(e.target.value);
 
-        }}/>
-        <div>
-            {namee}
-        </div>
-        
+            }} />
+            <div>
+                {namee}
+            </div>
 
-        <h2>
-         {valuee}
-        </h2>
 
-        <button onClick={()=>{
-            if(valuee=="true"){
-                change("false");
-            }else{
-                change("true");
-            }
+            <h2>
+                {valuee}
+            </h2>
 
-        }}>
-            OK
+            <button onClick={() => {
+                if (valuee == "true") {
+                    change("false");
+                } else {
+                    change("true");
+                }
 
-        </button>
+            }}>
+                OK
+
+            </button>
         </>
     )
 }

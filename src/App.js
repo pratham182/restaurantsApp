@@ -11,9 +11,9 @@ import Body from "./component/Body";
 import Child from "./component/Child";
 
 //importing named import
-import { Main_section,Main_section2 } from "./component/Many_comp";
+import { Main_section, Main_section2 } from "./component/Many_comp";
 
-const root=reactdom.createRoot(document.getElementById("root"));
+const root = reactdom.createRoot(document.getElementById("root"));
 
 
 /*header
@@ -43,25 +43,26 @@ const root=reactdom.createRoot(document.getElementById("root"));
 
 
 
-const WholeComponent=()=>
-{ const [name]=useState("hello"); 
+const WholeComponent = () => {
+  const [name] = useState("hello");
 
-return (
-  
+  return (
+
     <react.Fragment>
-     <Header/>
-     
-    <Body/>
-    <Footer/>
-    <Main_section/>
-    <Main_section2/>
-    <Child name={name} />
-    </react.Fragment>
-    
-)}
+      <Header />
 
-  
-root.render(<WholeComponent/>);
+      <Body />
+      <Footer />
+      <Main_section />
+      <Main_section2 />
+      <Child name={name} />
+    </react.Fragment>
+
+  )
+}
+
+
+root.render(<WholeComponent />);
 
 
 
