@@ -43,9 +43,9 @@ useEffect(()=>{
 },[searchText])
 
 const getRestu=async()=>{
-const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&collection=83644&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.1491875&lng=75.7216527&collection=83644&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
 const json_data=await data.json();
-console.log(json_data?.data);
+
 setRestru(json_data?.data?.cards);
 }
 return (
@@ -113,8 +113,12 @@ return (
 
 {
     //using map function
-    restu.map((res)=>{
-       return <RestuCard  {... res} />;
+    restu.slice(3).map((res)=>{
+      console.log(res?.card?.card?.info);
+       return <RestuCard  name={res?.card?.card?.info?.name} img={res?.card?.card?.info?.cloudinaryImageId} rating={res?.card?.card?.info?.totalRatingsString}
+       time={res?.card?.card?.info?.sla?.slaString}
+       cuisines={res?.card?.card?.info?.cuisines}
+       />;                                    
     })
 }
     </div>

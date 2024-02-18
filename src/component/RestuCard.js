@@ -1,8 +1,9 @@
 
 const RestuCard=({
-    name,cuisines,img,totalRatingsString
+    name,cuisines,img,rating,time
 })=>  {
-    
+ 
+const imgurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+img;
     //const {name,img}=Restu;
     
     return(
@@ -34,10 +35,10 @@ console.log(ele);
 // </h3>
 // <h4>{props.Restu.totalRatingsString}</h4>
 }
-<img src={img}>
+<img src={imgurl}>
 </img>
 
-<h2 >{card?.card?.info?.name}</h2> 
+<h2 >{name}</h2> 
 
 {/* rating */}
 <div id="rating">
@@ -47,20 +48,22 @@ console.log(ele);
 <defs><linearGradient id="StoreRating20_svg__paint0_linear_32982_71567" x1="10" y1="1" x2="10" y2="19" gradientUnits="userSpaceOnUse"><stop stop-color="#21973B"></stop><stop offset="1" stop-color="#128540"></stop></linearGradient></defs>
 </svg>
 <div>
-    {totalRatingsString}
+   {rating}
 </div>
 <ul>
-    <li>
-        5.8
-    </li>
+  <li>
+    {time}
+  </li>
 </ul>
+
+
 </div>
-
-
-<h4>
-
-    {cuisines}
-</h4>
+<div style={{display:"flex"}}>
+    {cuisines?.map((r, index) => {
+  
+  return <h3 key={index}>{r}</h3>;
+})}
+</div>
 
     </div>
 )};
