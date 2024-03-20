@@ -55,7 +55,8 @@ const WholeComponent = () => {
       <Footer />
       <Main_section />
       <Main_section2 />
-      <Child name={name} />
+     
+     
     </react.Fragment>
 
   )
